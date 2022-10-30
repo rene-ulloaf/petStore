@@ -1,0 +1,65 @@
+CREATE TABLE "Animal" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "nombre" TEXT,
+    "idTipo" INTEGER NOT NULL,
+    "idEspecie" INTEGER NOT NULL,
+    "idRaza" INTEGER NOT NULL,
+    "peso" TEXT,
+    "edad" TEXT,
+    "vigente" INTEGER NOT NULL DEFAULT (1)
+);
+CREATE TABLE sqlite_sequence(name,seq);
+CREATE UNIQUE INDEX "indx_primary_animal" on animal (id ASC);
+CREATE TABLE "Especie" (
+    "idEspecie" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "idTipo" INTEGER NOT NULL,
+    "glosa" TEXT NOT NULL,
+    "orden" INTEGER,
+    "vigente" INTEGER NOT NULL DEFAULT (1)
+);
+CREATE TABLE "Raza" (
+    "idRaza" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "idEspecie" INTEGER NOT NULL,
+    "glosa" TEXT NOT NULL,
+    "orden" INTEGER,
+    "vigente" INTEGER NOT NULL DEFAULT (1)
+);
+CREATE TABLE "Tipo" (
+    "idTipo" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "glosa" TEXT NOT NULL,
+    "orden" INTEGER,
+    "vigente" INTEGER NOT NULL DEFAULT (1)
+);
+CREATE UNIQUE INDEX "indx_primary_especie" on especie (idEspecie ASC);
+CREATE UNIQUE INDEX "indx_primary_raza" on raza (idRaza ASC);
+CREATE UNIQUE INDEX "indx_primary_tipo" on tipo (idTipo ASC);
+CREATE TABLE "android_metadata" ("locale" TEXT DEFAULT 'es_ES');
+
+
+Insert Into Tipo(glosa, orden)Values('No Definido', 1);
+Insert Into Tipo(glosa, orden)Values('Mamifero', 2);
+Insert Into Tipo(glosa, orden)Values('Aves', 3);
+Insert Into Tipo(glosa, orden)Values('Reptiles', 4);
+
+
+Insert Into Especie(idTipo, glosa, orden)Values(1, 'No Definido', 1);
+Insert Into Especie(idTipo, glosa, orden)Values(2, 'No Definido', 1);
+Insert Into Especie(idTipo, glosa, orden)Values(2, 'Perro', 2);
+Insert Into Especie(idTipo, glosa, orden)Values(2, 'Gato', 3);
+Insert Into Especie(idTipo, glosa, orden)Values(3, 'No Definido', 1);
+Insert Into Especie(idTipo, glosa, orden)Values(3, 'Canario', 2);
+Insert Into Especie(idTipo, glosa, orden)Values(4, 'No Definido', 1);
+Insert Into Especie(idTipo, glosa, orden)Values(4, 'Tortuga', 2);
+
+
+Insert Into Raza(idEspecie, glosa, orden)Values(1, 'No Definido', 1);
+Insert Into Raza(idEspecie, glosa, orden)Values(2, 'No Definido', 1);
+Insert Into Raza(idEspecie, glosa, orden)Values(3, 'No Definido', 1);
+Insert Into Raza(idEspecie, glosa, orden)Values(4, 'No Definido', 1);
+Insert Into Raza(idEspecie, glosa, orden)Values(4, 'Doberman', 2);
+Insert Into Raza(idEspecie, glosa, orden)Values(5, 'No Definido', 1);
+Insert Into Raza(idEspecie, glosa, orden)Values(5, 'Siames', 2);
+Insert Into Raza(idEspecie, glosa, orden)Values(6, 'No Definido', 1);
+Insert Into Raza(idEspecie, glosa, orden)Values(7, 'No Definido', 1);
+Insert Into Raza(idEspecie, glosa, orden)Values(8, 'No Definido', 1);
+INSERT INTO "android_metadata" VALUES ('es_ES');

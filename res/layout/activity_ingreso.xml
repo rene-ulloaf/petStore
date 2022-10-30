@@ -1,0 +1,155 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Ingreso" >
+
+    <EditText
+        android:id="@+id/txtNombreMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/lblNombreMascota"
+        android:ems="10"
+        android:inputType="text" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/lblNombreMascota"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtNombreMascota"
+        android:layout_alignBottom="@+id/txtNombreMascota"
+        android:layout_alignParentLeft="true"
+        android:text="Nombre Animal" />
+
+    <TextView
+        android:id="@+id/lblEdad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtEdad"
+        android:layout_alignBottom="@+id/txtEdad"
+        android:layout_alignLeft="@+id/lblPeso"
+        android:text="Edad" />
+
+    <TextView
+        android:id="@+id/lblPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtPrecio"
+        android:layout_alignBottom="@+id/txtPrecio"
+        android:layout_alignLeft="@+id/lblEdad"
+        android:text="Precio" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:text="Cancelar" />
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnCancelar"
+        android:layout_alignLeft="@+id/btnCancelar"
+        android:layout_alignParentRight="true"
+        android:text="Guardar" />
+
+    <TextView
+        android:id="@+id/lblPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtPeso"
+        android:layout_alignBottom="@+id/txtPeso"
+        android:layout_alignLeft="@+id/btnGuardar"
+        android:text="Peso" />
+
+    <TextView
+        android:id="@+id/lblRaza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lblPeso"
+        android:layout_alignTop="@+id/cmbRaza"
+        android:text="Raza" />
+
+    <TextView
+        android:id="@+id/lblTipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lblNombreMascota"
+        android:layout_below="@+id/txtNombreMascota"
+        android:text="Tipo" />
+
+    <TextView
+        android:id="@+id/lblEspecie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lblTipo"
+        android:layout_alignTop="@+id/cmbEspecie"
+        android:text="Especie" />
+
+    <Spinner
+        android:id="@+id/cmbTipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtNombreMascota"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/txtNombreMascota" />
+
+    <Spinner
+        android:id="@+id/cmbEspecie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cmbTipo"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/cmbTipo" />
+
+    <Spinner
+        android:id="@+id/cmbRaza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cmbEspecie"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/cmbEspecie" />
+
+    <EditText
+        android:id="@+id/txtPeso"
+        android:numeric="integer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtEdad"
+        android:layout_below="@+id/cmbRaza"
+        android:ems="10"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/txtEdad"
+        android:numeric="integer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtPrecio"
+        android:layout_below="@+id/txtPeso"
+        android:ems="10"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/txtPrecio"
+        android:numeric="integer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/btnGuardar"
+        android:layout_below="@+id/txtEdad"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+</RelativeLayout>
